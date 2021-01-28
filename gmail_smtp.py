@@ -11,7 +11,7 @@ if(len(sys.argv)!=1):
     email=sys.argv[1]
     subject=sys.argv[2] 
 
-    credentials = ["yourgmailaddress@gmail.com","yourpassword"]
+    credentials = ["yourgmailaddress@gmail.com","yourpassword"] #input your gmail address and password
 
     smtpObj = smtplib.SMTP('smtp.gmail.com', 587) #you must allow it: https://myaccount.google.com/lesssecureapps
     smtpObj.starttls()
