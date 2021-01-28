@@ -21,9 +21,9 @@ namespace Lab1._3
             {
                 try
                 {
-                    SmtpClient CL = new SmtpClient("smtp.gmail.com"); #you must allow it: https://myaccount.google.com/lesssecureapps
+                    SmtpClient CL = new SmtpClient("smtp.gmail.com"); //you must allow it: https//myaccount.google.com/lesssecureapps
                     CL.Port = 587;
-                    CL.Credentials = new NetworkCredential("yourgmailaddress@gmail.com", "yourpassword");
+                    CL.Credentials = new NetworkCredential("yourgmailaddress@gmail.com", "yourpassword"); //input your gmail address and password
                     CL.EnableSsl = true;
                     CL.DeliveryMethod = SmtpDeliveryMethod.Network;
                     CL.Send(new MailMessage("yourgmailaddress@gmail.com", args[0], args[1], $"{DateTime.Now} Hello, gmail;)"));
@@ -42,31 +42,3 @@ namespace Lab1._3
         }
     }
 }
-
-//try
-//{
-
-//    if (args.Length != 2)
-//    {
-//        Console.WriteLine("Incorrect usage!");
-//        Console.WriteLine("Two arguments required: <E-mail address> <Subject>");
-//        return 1;
-//    }
-//    string host = args[0];
-//    string subject = args[1];
-//    using (SmtpClient mail = new SmtpClient("smtp.gmail.com"))
-//    {
-//        mail.Port = 587;
-//        mail.EnableSsl = true;
-//        mail.Credentials = new NetworkCredential("vladsheln58@gmail.com", "Password");
-//        string text = "Name: Vlad\nSurname:Shelin\nDate:" + DateTime.Now;
-//        mail.Send(host, host, subject, text);
-//    }
-
-//    return 0;
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine(e);
-//    return -1;
-//}
